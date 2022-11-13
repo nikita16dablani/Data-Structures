@@ -1,0 +1,21 @@
+/* 
+Idea related to stack functions
+*/
+struct to represent stackNode
+struct to represent stack(the Header)
+void initStack(Stack *stack,int elementSize)
+{
+logic to set stack property elementSize as elementSize and top as NULL
+}
+//IDEA1
+int Push(Stack *stack,void itemToBePushed)
+{
+//logic to push and return 0 ,if unable to push for whatever reasons.
+//return1 if successfully added to stack
+}
+int pop(Stack *stack,void *targetVariable)
+{
+pick from stack and place against the block to which targerVariable pointer is pointing to
+return1 if popped
+return0 if unable to pop for whatever reasons
+}

@@ -1,0 +1,86 @@
+#include<stdio.h>
+void heapSort(int *x,int lb,int ub)
+{
+int y,ci,ri,g,lci,rci,swi;
+y=lb+1;
+while(y<=lb)
+{
+ci=y;
+while(ci>lb)
+{
+ri=(ci-1)/2;
+if(x[ci]>x[ri])
+{
+g=x[ci];
+x[ci]=x[ri];
+x[ri]=g;
+ci=ri;
+}
+else
+{
+break;
+}
+}
+y++;
+}
+//implementing heap sort
+y=ub;
+while(y>lb)
+{
+g=x[lb];
+x[lb]=x[y];
+x[y]=g;
+y--;
+ri=lb;
+while(ri<y)
+{
+lci=(ri*2)+1;
+if(lci>y)
+{
+break;
+}
+rci=lci+1;
+if(rci>y)
+{
+swi=lci;
+}
+else
+{
+if(x[lci]>x[rci])
+{
+swi=lci;
+}
+else
+{
+swi=rci;
+}
+}
+if(x[swi]>x[ri])
+{
+g=x[swi];
+x[swi]=x[ri];
+x[ri]=g;
+ri=swi;
+}
+else
+{
+break;
+}
+}
+}
+}
+int main()
+{
+int x[10],i;
+for(i=0;i<=9;i++)
+{
+printf("Enter a number: ");
+scanf("%d",&x[i]);
+}
+heapSort(x,0,9);
+for(i=0;i<=9;i++)
+{
+printf("%d\n",x[i]);
+}
+return 0;
+}

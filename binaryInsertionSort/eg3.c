@@ -1,0 +1,56 @@
+#include<stdio.h>
+int main()
+{
+int x[10],y,size,m,lb,ub,si,ei,mid,e,f,g,num;
+size=10;
+m=size-1;
+for(y=0;y<=9;y++)
+{
+printf("Enter a number : ");
+scanf("%d",&x[y]);
+}
+lb=0;
+ub=9;
+y=lb+1;
+while(y<=ub)
+{
+si=lb;
+ei=y-1;
+num=x[y];
+while(si<=ei)
+{
+mid=(si+ei)/2;
+if(x[mid]==num)
+{
+si=mid;
+break;
+}
+else
+{
+if(num<x[mid])
+{
+ei=mid-1;
+}
+else
+{
+si=mid+1;
+}
+}
+}
+e=y-1;
+f=y;
+while(e>=si)
+{
+x[f]=x[e];
+e--;
+f--;
+}
+x[si]=num;
+y++;
+}
+for(y=0;y<=m;y++) 
+{
+printf("%d\n",x[y]);
+}
+return 0;
+}

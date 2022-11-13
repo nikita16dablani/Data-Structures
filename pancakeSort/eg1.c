@@ -1,0 +1,53 @@
+#include<stdio.h>
+int main()
+{
+int x[10],i,size,e,f,g,largest;
+for(i=0;i<=9;i++)
+{
+printf("Enter a number: ");
+scanf("%d",&x[i]);
+}
+size=10;
+while(size>0)
+{
+largest=0;
+for(i=1;i<size;i++)
+{
+if(x[i]>x[largest])
+{
+largest=i;
+}
+}
+if(largest==(size-1))
+{
+size--;
+continue;
+}
+e=0;
+f=largest;
+while(e<=f)
+{
+g=x[e];
+x[e]=x[f];
+x[f]=g;
+e++;
+f--;
+}
+e=0;
+f=size-1;
+while(e<=f)
+{
+g=x[e];
+x[e]=x[f];
+x[f]=g;
+e++;
+f--;
+}
+size--;
+}
+for(i=0;i<=9;i++)
+{
+printf("%d\n",x[i]);
+}
+return 0;
+}
